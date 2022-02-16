@@ -1,17 +1,17 @@
 @font-face {
-    font-family: "iestrategic";
-    src:url("fonts/iestrategic.eot");
-    src:url("fonts/iestrategic.eot?#iefix") format("embedded-opentype"),
-      url("fonts/iestrategic.woff") format("woff"),
-      url("fonts/iestrategic.ttf") format("truetype"),
-      url("fonts/iestrategic.svg#iestrategic") format("svg");
+    font-family: "antiqlog";
+    src:url("fonts/antiqlog.eot");
+    src:url("fonts/antiqlog.eot?#iefix") format("embedded-opentype"),
+      url("fonts/antiqlog.woff") format("woff"),
+      url("fonts/antiqlog.ttf") format("truetype"),
+      url("fonts/antiqlog.svg#antiqlog") format("svg");
     font-weight: normal;
     font-style: normal;
   
   }
   
   [data-icon]:before {
-    font-family: "iestrategic" !important;
+    font-family: "antiqlog" !important;
     content: attr(data-icon);
     font-style: normal !important;
     font-weight: normal !important;
@@ -25,7 +25,7 @@
   
   [class^="icon-"]:before,
   [class*=" icon-"]:before {
-    font-family: "iestrategic" !important;
+    font-family: "antiqlog" !important;
     font-style: normal !important;
     font-weight: normal !important;
     font-variant: normal !important;
