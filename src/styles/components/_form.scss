@@ -1,0 +1,72 @@
+.form-group{
+    @include displayFlex();
+    flex-direction: column;
+    padding: 15px 15px 0 0;
+}
+.last-group{
+    @include displayFlex();
+    justify-content: space-between !important;
+    padding-top: 37px;
+}
+.form-label{
+    font-size: .8rem;
+    letter-spacing: .5px;
+}
+.form-check{
+    @include displayFlex();
+    margin: 0;
+    align-items: center;
+}
+.form-check-input{
+    width: 15px;
+    height: 15px;
+}
+.form-check-label{
+    font-size: .8rem;
+    padding-left: 5px;
+}
+.form-check-input { 
+    height: 20px;
+	border:1px solid #B5B7B8;
+	padding:7px 7px 7px 12px;
+	background:#FFF;
+	border:1px solid #d5d5d6;
+	outline:none;
+	color:#96999D;      
+	-webkit-appearance: none;
+	-webkit-font-smoothing: antialiased;
+	-webkit-transition: all 0.15s;
+	   -moz-transition: all 0.15s;
+		-ms-transition: all 0.15s;
+		 -o-transition: all 0.15s;
+		  	transition: all 0.15s;			
+}
+
+.form-check-input:focus
+  {
+	border-color: rgba(0,0,0,.1);;
+	color: #2E3236;
+}
+.form-check-input:checked{
+    position:relative;
+}
+.form-check-input:checked:before
+{
+    content:'';
+    display:block;
+    width:15px;
+    height:14px;
+    position:absolute;
+    top:2px;
+    left:2px;
+    background-color: rgba(0,0,0,.3);
+    opacity:0.5;
+}
+
+.form-label{
+    text-transform: uppercase;
+}
+.form-control{
+    background-color: rgba(0,0,0,.1) !important;
+    padding: 5px;
+}

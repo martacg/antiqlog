@@ -1,0 +1,25 @@
+.msg__box{
+    display: inline-block;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    letter-spacing: 0px;
+    font-size: 0.8rem;
+    line-height: 1.4em;
+    width: fit-content;
+    &.msg__box--info{
+        color: #004085;
+        background-color: #cce5ff;
+        border-color: #b8daff;
+    }
+    &.msg__box--success{
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+    }
+    &.msg__box--error{
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+    }
+}

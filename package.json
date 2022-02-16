@@ -1,0 +1,42 @@
+{
+  "name": "antiqlog",
+  "version": "1.0.0",
+  "description": "Desarrollo a medida de una homepage para una tienda ficticia especializada en la venta de muebles de diseño.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martacg/antiqlog.git"
+  },
+  "keywords": [
+    "tienda de muebles de diseño",
+    "desarrollo a medida",
+    "muebles de lujo",
+    "desarrollo web"
+  ],
+  "author": "Marta González",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martacg/antiqlog/issues"
+  },
+  "homepage": "https://github.com/martacg/antiqlog#readme",
+  "dependencies": {
+    "autoprefixer": "^10.4.2",
+    "css-loader": "^6.6.0",
+    "file-loader": "^6.2.0",
+    "handlebars": "^4.7.7",
+    "handlebars-loader": "^1.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "image-webpack-loader": "^8.1.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "node-sass": "^7.0.1",
+    "postcss-loader": "^6.2.1",
+    "rimraf": "^3.0.2",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.69.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
+}

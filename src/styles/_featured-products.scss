@@ -1,0 +1,89 @@
+/*----- Featured Products -----*/
+.featured-products{
+    width: 100vw;
+    padding: 30px 0;
+    .featured-products__content{
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: auto auto;
+        justify-content: stretch;
+        place-items: start;
+        width: 100%;
+        vertical-align: top;
+        h2{
+            @include displayFlex();
+            flex-flow: column;
+            text-transform: uppercase;
+            padding:5px 15px 15px 15px;
+            span{
+                &:first-child{
+                    color: rgba(0,0,0,.6);
+                    font-size: .9rem;
+                    line-height: 1em;
+                }
+                &:last-child{
+                    color: rgba(0,0,0,.9);
+                    font-weight: 400;
+                    font-size: 1.5rem;
+                    letter-spacing: 1px;
+                    line-height: 1em;
+                }
+            }
+        }
+        div{
+            @include displayFlex();
+            flex-direction: column;
+            &:first-child{
+                flex-direction: column-reverse;
+                figure{
+                    height: 88px;
+                    margin: 5px 15px 15px 15px;
+                    overflow: hidden;
+                    width: 168px;
+                    opacity: .8;
+                    img{
+                        width: inherit;
+                    }
+                }
+            }
+            figure{
+                height: 20vh;
+                order:1;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: fit-content;
+                }
+            }
+            h3{
+                order:2;
+                padding:15px 15px 0 15px;
+                text-transform: uppercase;
+                color: rgba(0,0,0,.6);
+                a{
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+            p{
+                order:3;
+                padding:5px 15px 15px 15px;
+                color: rgba(0,0,0,.6);
+                font-size: .9rem;
+                line-height: 1.4em;
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 1000px) {
+    .featured-products{
+        .featured-products__content {
+            grid-template-columns: auto;
+        }
+    }
+
+}

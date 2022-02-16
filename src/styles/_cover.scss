@@ -1,0 +1,53 @@
+    /*----- Cover -----*/
+    .cover{
+        position: relative;
+        overflow: hidden;
+        max-height: 600px;
+        figure{
+            background: rgba(0,0,0,1);
+            margin: -6px;
+            img{
+                width:100%;
+                opacity: .5;
+            }
+        }
+        .cover__content{
+            margin: 30px auto;
+            padding: 15px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-40%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            max-width: 1000px;
+            width: 100%;
+            
+
+            .cover__title,
+            .cover__text{
+                position: relative;
+                z-index: 1;
+                color: white;
+                text-shadow: 2px 2px rgba(0,0,0,.5);
+                font-size: 1.2rem;
+            }
+
+            .cover__title{
+                font-size:2rem;
+                line-height:1em;
+                text-transform: uppercase;
+                
+            }
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        .cover{
+            figure{
+                img{
+                    height: 400px;
+                }
+            }
+        }
+
+    }

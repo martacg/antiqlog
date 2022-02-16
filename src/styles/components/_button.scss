@@ -1,0 +1,16 @@
+.btn{
+    background: rgba(0,0,0,.8);
+    border: 0;
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
+    font-size: .8rem;
+    letter-spacing: .5px;
+    &:hover{
+        cursor: pointer;
+        opacity: .8;
+    }
+    &.btn--large{
+        width:100%
+    }
+}

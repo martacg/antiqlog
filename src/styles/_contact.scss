@@ -1,0 +1,68 @@
+@import 'components/button';
+@import 'components/form';
+@import 'components/msg';
+
+/*----- Contact -----*/
+.contact{
+    .contact__content{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin: 30px auto;
+        padding:15px;
+        max-width: 1000px;
+        .contact__info{
+            a{
+                &:hover{
+                    opacity: .8;
+                }
+            }
+            p{
+                color: rgba(0,0,0,0.6);
+                font-size: .9rem;
+                line-height: 1.2em;
+                .agency-name{
+                    font-size: 2rem;
+                    color: rgba(0,0,0,.8);
+                    line-height: 1.7em;
+                }
+                &.agency-location,
+                &.agency-phone,
+                &.agency-email{
+                    a{
+                        @include displayFlex();
+                        .icon{
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .contact__form{
+            p{
+                color: rgba(0,0,0,0.6);
+                font-size: .9rem;
+                line-height: 1.2em;
+            }
+            form{
+                grid-template-columns: 50% 50%;
+                display: grid;
+                grid-template-rows: auto auto auto;
+                a{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1000px) {
+    .contact {
+        .contact__content{
+            grid-template-columns: auto;
+            .contact__form{
+                form{
+                    grid-template-columns: 48% 48%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+    
+    @import 'helpers/mixins';
+    @import 'icons';
+
+    /*----- Common -----*/
+    
+    body{
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size:16px;
+        line-height: 1.5em;
+        @include transition();
+    }
+
+
+    .main__content{
+        overflow: hidden;
+    }
+    .mrgTop{
+        margin-top: 15px;
+    }
+
+    @media screen and (min-width: 1000px) {
+
+    }
