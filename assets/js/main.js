@@ -1,1 +1,101 @@
-(()=>{var e={221:(e,t,o)=>{"use strict";o.r(t)},693:()=>{!function(){const e=document.getElementById("loader");setTimeout((()=>{e.classList.add("opacity")}),1e3),setTimeout((()=>{e.classList.add("hidden")}),2e3)}();const e=document.getElementById("header");window.addEventListener("scroll",(function(){var t=window.pageYOffset|document.body.scrollTop;t>1?e.classList.add("sticky"):t<=1&&e.classList.remove("sticky")})),document.getElementById("msgBox")}},t={};function o(r){var d=t[r];if(void 0!==d)return d.exports;var n=t[r]={exports:{}};return e[r](n,n.exports,o),n.exports}o.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return o.d(t,{a:t}),t},o.d=(e,t)=>{for(var r in t)o.o(t,r)&&!o.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},o.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),o.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},(()=>{"use strict";o(693),o(221)})()})();
+(function(){
+
+    //LOADER
+
+    const pagina = document.getElementById("loader");
+    setTimeout(() => {
+        pagina.classList.add("opacity");
+    }, 1000);
+    setTimeout(() => {
+        pagina.classList.add('hidden');
+    }, 2000);
+    
+    
+
+}());
+
+
+//STICKY
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", function() {
+        
+    var scroll = window.pageYOffset | document.body.scrollTop;
+      
+    if (scroll > 1) { 
+        header.classList.add("sticky");
+    }else if (scroll <= 1) { 
+        header.classList.remove("sticky"); 
+    }
+});
+      
+
+//FORM
+
+const msgBox = document.getElementById("msgBox");
+
+function validar(formulario) {
+        if(formulario.name.value=="" || formulario.lastname.value == "" || formulario.phone.value == "" || formulario.email.value == "" || formulario.comments.value == ""){
+            msgBox.classList.remove("msg__box--success");
+            msgBox.classList.add("msg__box--error");
+            msgBox.innerHTML = "Faltan datos por rellenar";
+            return false;
+        }
+        if(!formulario.legal.checked){
+            msgBox.classList.remove("msg__box--success");
+            msgBox.classList.add("msg__box--error");
+            msgBox.innerHTML = "Es necesario aceptar el aviso legal.";
+            return false;
+        }
+    
+    return enviaForm(formulario);
+}
+
+function enviaForm(formulario){
+
+    
+    msgBox.classList.remove("msg__box--error");
+    msgBox.classList.remove("msg__box--success");
+    msgBox.classList.add("msg__box--info");
+
+    msgBox.innerHTML = "Procesando...";
+    
+    const XHR = new XMLHttpRequest();
+  
+    let urlEncodedData = "",
+        urlEncodedDataPairs = [],
+        name;
+  
+    // Convertir data object en array
+    for( name in formulario ) {
+      urlEncodedDataPairs.push( encodeURIComponent( name ) + '=' + encodeURIComponent( formulario[name] ) );
+    }
+  
+    urlEncodedData = urlEncodedDataPairs.join( '&' ).replace( /%20/g, '+' );
+  
+    // Procesamiento con éxito
+    XHR.addEventListener( 'load', function(event) {
+      msgBox.classList.remove("msg__box--error");
+      msgBox.classList.add("msg__box--success");
+      formulario.reset();
+      msgBox.innerHTML = "¡Mensaje Enviado!";
+    } );
+  
+    // Error al procesar
+    XHR.addEventListener( 'error', function(event) {
+        msgBox.classList.remove("msg__box--error");
+        msgBox.classList.add("msg__box--success");
+        msgBox.innerHTML = "Se ha producido un error.";
+    } );
+  
+    // Configurar solicitud
+    XHR.open( 'POST', 'https://martagonzalez.dev/lab/antiqlog/sendMail.php' );
+  
+    // Encabezado HTTP requerido para las solicitudes POST de datos de formulario
+    XHR.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+  
+    // Enviar data
+    XHR.send( urlEncodedData );
+
+}

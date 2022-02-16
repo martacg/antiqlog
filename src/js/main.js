@@ -90,7 +90,7 @@ function enviaForm(formulario){
     } );
   
     // Configurar solicitud
-    XHR.open( 'POST', 'https://martagonzalez.dev/lab/frontend-test/sendMail.php' );
+    XHR.open( 'POST', 'https://martagonzalez.dev/lab/antiqlog/sendMail.php' );
   
     // Encabezado HTTP requerido para las solicitudes POST de datos de formulario
     XHR.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
